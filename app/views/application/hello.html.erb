@@ -1,0 +1,5 @@
+<h3>Hi, <%=session[:name]%></h3>
+<b>Would you like to <%= link_to 'view the secret', secrets_path %>?</b> 
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    Or would you like to <input type=submit value='log out'>?
+<%end%>

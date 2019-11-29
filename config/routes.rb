@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'sessions/new', to: 'sessions#new'
+  root 'sessions#new'
+  get '/hello', to: 'application#hello'
+  get 'secrets/show', to: 'secrets#show', as: 'secrets' 
+  post 'sessions/create', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+
 end
