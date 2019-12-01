@@ -4,7 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def hello
-    redirect_to controller: "sessions", action: "new" unless session[:name]
+    unless session[:name]
+      redirect_to controller: "sessions", action: "new"
+    end
+    
   end
 
   def current_user
@@ -16,5 +19,4 @@ class ApplicationController < ActionController::Base
   def require_logged_in
     redirect_to controller: "sessions", action: "new" unless current_user
   end
-  
 end
