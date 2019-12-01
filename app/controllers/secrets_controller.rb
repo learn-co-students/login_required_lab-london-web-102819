@@ -5,10 +5,4 @@ class SecretsController < ApplicationController
     end 
     
 
-    private 
-    def login_valid
-        unless session[:name] && !session[:name].empty?
-            redirect_to new_session_path
-        end 
-    end 
 end
