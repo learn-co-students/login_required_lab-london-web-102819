@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     end
 
     session[:name] = params[:name]
-    redirect_to controller: "application", action: "hello"
+    redirect_to controller: "secrets", action: "show"
   end
 
   def destroy
